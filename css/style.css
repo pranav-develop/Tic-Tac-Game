@@ -1,0 +1,96 @@
+html{
+    background:#F5F5F5;
+}
+.box{
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+}
+.line-vertical{
+    width: 6px;
+    background: #000;
+}
+.line-horizontal{
+    width: 100%;
+    height: 6px;
+    background: #000;
+}
+.d-none{
+    display: none !important;
+}
+.main-canvas{
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    margin-top: 30px;
+    transform: scale(1.1);
+}
+.main-canvas .row {
+    display: flex;
+}
+.game-over{
+    z-index: 5;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    
+}
+.game-over > div{
+    width: 400px;
+    height: 250px;
+    background: #f6e4f8;
+    border: 2px solid #000;
+}
+.game-over .text{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+}
+.game-over .game-over-options{
+    display: flex;
+}
+.circle-outer{
+    position: relative;
+    width: 88px;
+    height: 88px;
+    margin: 10px;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 6px solid #000;
+}
+.cross-outer{
+    position: relative;
+    display: flex;
+}
+.cross-outer div:first-child{
+    width: 140px;
+    height: 6px;
+    align-self: center;
+    background: #000;
+    transform: rotateZ(45deg);
+    position: absolute;
+}
+.cross-outer div:last-child{
+    width: 140px;
+    height: 6px;
+    align-self: center;
+    margin-top: -6px;
+    background: #000;
+    transform: rotateZ(-45deg);
+    position: absolute;
+}
+.refresh-button{
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background: lightblue;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
