@@ -4,6 +4,9 @@ let game = [[-1,-1,-1],
             [-1,-1,-1]];
 
 let gameOver = false;
+let cvp = false;
+let pvp = false;
+let computerchance = false;
 function checkDigonal(value){
     let count1 = 0, count2 = 0;
     for(let i=0; i<3; i++){
@@ -67,24 +70,41 @@ function gameOverHogaya(name){
 }
 let circleTurn = false;
 function buttonclicked(positon){
-    let i = parseInt(positon[0]);
-    let j = parseInt(positon[1]);
-    if(game[i][j] === -1){
-        if(circleTurn){
-            game[i][j] = 0;
-            document.getElementById(positon).classList.add("circle-outer");
-            circleTurn = !circleTurn;
+    if(pvp){
+        let i = parseInt(positon[0]);
+        let j = parseInt(positon[1]);
+        if(game[i][j] === -1){
+            if(circleTurn){
+                game[i][j] = 0;
+                document.getElementById(positon).classList.add("circle-outer");
+                circleTurn = !circleTurn;
 
-        } else {
-            game[i][j] = 1;
-            document.getElementById(positon).classList.add("cross-outer");
-            circleTurn = !circleTurn;
+            } else {
+                game[i][j] = 1;
+                document.getElementById(positon).classList.add("cross-outer");
+                circleTurn = !circleTurn;
+            }
         }
-    }
-    if(!gameOver){
-        checkForWin();
+        if(!gameOver){
+            checkForWin();
+        }
+    } else if(pvc && computerchance === true){
+        
+        let position = calculateNextMove(game, true, 3);
     }
 }
 function refresh(){
     location.reload();
+}
+function selectMode(gameType) {
+    if(gameType === "pvc")
+        pvc = true;
+    else if(gameType === "pvp")
+        pvp = true;
+    document.querySelector(".menu").classList.add("menu-hide");
+} 
+function calculateNextMove(currentState, computerChance, count){
+    if(count === 0){
+        return;
+    }
 }

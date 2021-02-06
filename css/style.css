@@ -1,6 +1,9 @@
 html{
     background:#F5F5F5;
 }
+body{
+    font-size: 16px;
+}
 .box{
     width: 120px;
     height: 120px;
@@ -93,4 +96,36 @@ html{
     border: 1px solid #000;
     cursor: pointer;
 }
+/*---------menu--------------*/
+.menu{
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    background: lightgray;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+}
+.menu .menu-head{
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: center;
+}
+.menu .menu-options{
+    width: 100%;
+    text-align: center;
+}
+.menu .menu-button{
+    width:max-content;
+    padding: 15px 30px;
+    font-size: 1rem;
+    background: rgb(95, 207, 245);
+    margin: 50px auto;
+    cursor: pointer;
+}
+.menu-hide{
+    display: none !important;
+    z-index: -1 !important;
+}

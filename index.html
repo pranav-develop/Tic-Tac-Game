@@ -3,11 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lets see</title>
+    <title>Tic Tac</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div class="menu">
+      <h1 class="menu-head">Tic Tac Toe</h1>
+      <!-- <div class="menu-img"><img src="#" alt=""></div> -->
+      <div class="menu-options">
+        <button class="menu-button play-against-cpu" onclick="selectMode('pvc')">Player vs. CPU</button>
+        <button class="menu-button play-against-player" onclick="selectMode('pvp')">Player vs. Player</button>
+      </div>
+    </div>
     <div class="main-canvas">
       <div class="row">
         <a href="#" id="00" onclick="buttonclicked('00')" class="col box">
