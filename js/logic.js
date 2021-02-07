@@ -1,12 +1,4 @@
 //jshint esversion:8
-let game = [[-1,-1,-1],
-            [-1,-1,-1],
-            [-1,-1,-1]];
-
-let gameOver = false;
-let cvp = false;
-let pvp = false;
-let computerchance = false;
 function checkDigonal(value){
     let count1 = 0, count2 = 0;
     for(let i=0; i<3; i++){
@@ -18,6 +10,9 @@ function checkDigonal(value){
                 count2++;
             }
         }
+    }
+    if(value === game[1][1]){
+        count2++;
     }
     if(count1===3 || count2 === 3) return true;
     return false;
@@ -52,59 +47,27 @@ function checkVertical(value){
     }
     return won1 || won2 || won3;
 }
-function checkForWin(){
+function getWinner(){
     if(checkDigonal(0) || checkStraight(0) || checkVertical(0)){
-        console.log("Circle has won");
-        gameOver = true;
-        gameOverHogaya("Circle");
+        // console.log("Circle has won");
+        return 0;
     }
     if(checkDigonal(1) || checkStraight(1) || checkVertical(1)){
-        console.log("Cross has won");
-        gameOver = true;
-        gameOverHogaya("Cross");
+        // console.log("Cross has won");
+        return 1;
     }
+    return -1;
 }
-function gameOverHogaya(name){
-    document.querySelector(".game-over").classList.remove("d-none");
-    document.querySelector(".game-over .text").innerHTML = name + " has Won!!!";
-}
-let circleTurn = false;
-function buttonclicked(positon){
-    if(pvp){
-        let i = parseInt(positon[0]);
-        let j = parseInt(positon[1]);
-        if(game[i][j] === -1){
-            if(circleTurn){
-                game[i][j] = 0;
-                document.getElementById(positon).classList.add("circle-outer");
-                circleTurn = !circleTurn;
-
-            } else {
-                game[i][j] = 1;
-                document.getElementById(positon).classList.add("cross-outer");
-                circleTurn = !circleTurn;
+function checkDraw(board){
+    for(let i=0; i<3; i++){
+        for(let j=0; j<3; j++){
+            if(board[i][j] === -1){
+                return false;
             }
         }
-        if(!gameOver){
-            checkForWin();
-        }
-    } else if(pvc && computerchance === true){
-        
-        let position = calculateNextMove(game, true, 3);
     }
+    return true;
 }
 function refresh(){
     location.reload();
-}
-function selectMode(gameType) {
-    if(gameType === "pvc")
-        pvc = true;
-    else if(gameType === "pvp")
-        pvp = true;
-    document.querySelector(".menu").classList.add("menu-hide");
-} 
-function calculateNextMove(currentState, computerChance, count){
-    if(count === 0){
-        return;
-    }
 }

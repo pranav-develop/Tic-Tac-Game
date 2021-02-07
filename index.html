@@ -17,66 +17,70 @@
     </div>
     <div class="main-canvas">
       <div class="row">
-        <a href="#" id="00" onclick="buttonclicked('00')" class="col box">
+        <a class="box" href="#" id="00" onclick="buttonclicked('00')" class="col box">
           <div></div>
           <div></div>
         </a>
         <div class="col line-vertical"></div>
-        <a href="#" id="01" onclick="buttonclicked('01')" class="col box">
+        <a class="box" href="#" id="01" onclick="buttonclicked('01')" class="col box">
           <div></div>
           <div></div>
         </a>
         <div class="col line-vertical"></div>
-        <a href="#" id="02" onclick="buttonclicked('02')" class="col box">
+        <a class="box" href="#" id="02" onclick="buttonclicked('02')" class="col box">
           <div></div>
           <div></div>
         </a>
       </div>
       <div class="row line-horizontal"></div>
       <div class="row">
-        <a href="#" id="10" onclick="buttonclicked('10')" class="col box">
+        <a class="box" href="#" id="10" onclick="buttonclicked('10')" class="col box">
           <div></div>
           <div></div>
         </a>
         <div class="col line-vertical"></div>
-        <a href="#" id="11" onclick="buttonclicked('11')" class="col box">
+        <a class="box" href="#" id="11" onclick="buttonclicked('11')" class="col box">
           <div></div>
           <div></div>
         </a>
         <div class="col line-vertical"></div>
-        <a href="#" id="12" onclick="buttonclicked('12')" class="col box">
+        <a class="box" href="#" id="12" onclick="buttonclicked('12')" class="col box">
           <div></div>
           <div></div>
         </a>
       </div>
       <div class="row line-horizontal"></div>
       <div class="row">
-        <a href="#" id="20" onclick="buttonclicked('20')" class="col box">
+        <a class="box" href="#" id="20" onclick="buttonclicked('20')" class="col box">
           <div></div>
           <div></div>
         </a>
         <div class="col line-vertical"></div>
-        <a href="#" id="21" onclick="buttonclicked('21')" class="col box">
+        <a class="box" href="#" id="21" onclick="buttonclicked('21')" class="col box">
           <div></div>
           <div></div>
         </a>
         <div class="col line-vertical"></div>
-        <a href="#" id="22" onclick="buttonclicked('22')" class="col box">
+        <a class="box" href="#" id="22" onclick="buttonclicked('22')" class="col box">
           <div></div>
           <div></div>
         </a>
       </div>
     </div>
-    <button onClick="refresh()" class="refresh-button">Refresh</button>
+    <div class="options">
+      <button onClick="playAgain()" class="refresh-button">Refresh</button>
+      <button onClick="refresh()" class="refresh-button">Home</button>
+    </div>
     <div class="game-over d-none">
       <div>
         <div class="text"></div>
         <div class="game-over-options">
-          <button onClick="refresh()" class="refresh-button">Play Again</button>
+          <button onClick="playAgain()" class="refresh-button">Play Again</button>
           <button onClick="refresh()" class="refresh-button">Home</button>
         </div>
       </div>
     </div>
     <script src="js/logic.js"></script>
+    <script src="js/minimax.js"></script>
   </body>
 </html>
