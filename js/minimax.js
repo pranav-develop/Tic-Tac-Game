@@ -145,7 +145,6 @@ function playAgain(){
             [-1,-1,-1],
             [-1,-1,-1]];
 
-    pvc = false;
     circleTurn = false;
     document.querySelectorAll(".box").forEach(element => {
         element.classList.remove("circle-outer");
